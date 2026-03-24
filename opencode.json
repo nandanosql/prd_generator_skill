@@ -1,14 +1,27 @@
 {
+  "$schema": "https://opencode.ai/config.json",
   "permission": {
     "skill": {
-      "*": "allow",
-      "prd-generator": "allow"
+      "prd-generator": "allow",
+      "*": "allow"
+    },
+    "tool": {
+      "feishu-mcp_*": "allow",
+      "read": "allow",
+      "write": "allow",
+      "edit": "allow"
+    }
+  },
+  "agent": {
+    "default": {
+      "model": "anthropic/claude-3-5-sonnet-20241022",
+      "temperature": 0.5
     }
   },
   "command": {
     "generate-prd": {
-      "template": "Generate a comprehensive PRD from the BRD at: $ARGUMENTS",
-      "description": "Create PRD from BRD URL",
+      "description": "Generate a comprehensive PRD from a Feishu BRD URL",
+      "template": "Analyze the Business Requirement Document (BRD) at '$ARGUMENTS'.\n\nUse the 'prd-generator' skill to structure this information into a comprehensive Product Requirement Document (PRD) following the Golden Template.\n\nEnsure the final output is a new Feishu Doc.",
       "skill": "prd-generator"
     }
   }
