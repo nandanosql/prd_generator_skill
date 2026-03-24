@@ -1,80 +1,74 @@
-# 🚀 PRD Generator Skill for OpenCode
+# 🚀 PRD Generator Skill (Universal)
 
-![OpenCode Skill](https://img.shields.io/badge/OpenCode-Skill-blueviolet?style=for-the-badge)
-![Feishu Ready](https://img.shields.io/badge/Feishu-Integration-00D6B9?style=for-the-badge&logo=lark&logoColor=white)
+![OpenCode Skill](https://img.shields.io/badge/OpenCode-Supported-blueviolet?style=for-the-badge)
+![Cursor Compatible](https://img.shields.io/badge/Cursor-Compatible-black?style=for-the-badge&logo=cursor)
+![Windsurf Ready](https://img.shields.io/badge/Windsurf-Ready-blue?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-A powerful **OpenCode Skill** that automates the creation of comprehensive **Product Requirement Documents (PRDs)** from **Business Requirement Documents (BRDs)**. 
+A powerful **AI Skill** that automates the creation of comprehensive **Product Requirement Documents (PRDs)** from **Business Requirement Documents (BRDs)**. 
 
 It strictly enforces a "Golden Template" structure to ensure every PRD is developer-ready, consistent, and professional.
 
 ---
 
-## 📖 How It Works
+## 📖 Compatibility
 
-```mermaid
-graph LR
-    A[User] -->|/generate-prd URL| B(OpenCode Agent);
-    B -->|Fetch| C{Feishu BRD};
-    C -->|Analyze Content| D[PRD Generator Skill];
-    D -->|Apply Golden Template| E(Structured PRD);
-    E -->|Create| F[Feishu Doc];
-    F -->|Return Link| A;
-```
-
-## ✨ Key Features
-
-*   **Automated Structuring:** Instantly maps raw BRD content into a standardized 6-section PRD.
-*   **Golden Template Compliance:** Enforces the mandatory organization structure:
-    1.  **Background** (Problem, Context, Personas)
-    2.  **Objectives** (SMART Goals, KPIs)
-    3.  **Features** (Core, Tech Specs, MoSCoW)
-    4.  **User Experience** (UI, Journey)
-    5.  **Milestones** (Phases, Launch Plan)
-    6.  **Technical Requirements** (Stack, Security)
-*   **Metadata Management:** Automatically adds "Demand Doc", "Key Persons", and "High Risk Review" tables.
-*   **Rich Formatting:** Generates Feishu Docs with native callouts, tables, and grids.
+| Tool | Integration Method | Usage |
+| :--- | :--- | :--- |
+| **OpenCode** | Native Skill | `/generate-prd <URL>` |
+| **Cursor** | `.cursorrules` | "Generate PRD from [File/URL]" |
+| **Windsurf** | Generic Prompt | Copy `prompts/generate_prd_prompt.md` |
+| **ChatGPT** | System Prompt | Copy `prompts/generate_prd_prompt.md` |
 
 ---
 
-## 📦 Installation
+## 🛠️ Installation & Usage
 
-### Option A: Clone Repository (Recommended)
-Clone this repository directly into your OpenCode workspace:
+### 1️⃣ OpenCode (Native)
+Clone this repository into your OpenCode workspace or copy the `.opencode` folder.
 
 ```bash
 git clone https://github.com/nandanosql/prd_generator_skill.git
 ```
 
-### Option B: Manual Setup
-Copy the `.opencode` folder and `opencode.json` into your project root.
-
----
-
-## 🛠️ Usage
-
-Once installed, simply use the slash command in your OpenCode chat:
-
-```bash
-/generate-prd <BRD_Feishu_URL>
-```
-
-### Example
+**Run Command:**
 ```bash
 /generate-prd https://feishu.cn/wiki/wikcnP4Z8X...
 ```
 
-**What happens next?**
-1.  The agent reads your BRD.
-2.  It analyzes the requirements.
-3.  It generates a new Feishu Doc in your library titled `PRD | [Project Name]`.
-4.  It returns the link to the new document.
+### 2️⃣ Cursor (IDE)
+Just open this project folder in Cursor! The `.cursorrules` file is automatically loaded.
+
+**In Chat:**
+> "Generate a PRD for the new User Login feature based on the text below..."
+
+### 3️⃣ Windsurf / Antigravity / OpenClaw
+Use the generic prompt file located at `prompts/generate_prd_prompt.md`.
+
+1.  **Copy** the content of `prompts/generate_prd_prompt.md`.
+2.  **Paste** it into the AI Chat or System Prompt settings.
+3.  **Provide** your BRD content or URL.
 
 ---
 
-## ⚙️ Configuration
+## 📝 The "Golden Template" Structure
 
-The `opencode.json` file controls the skill's behavior and permissions.
+The generated PRD will always follow this mandatory structure:
+
+1.  **Header:** Demand Doc Info & Key Persons Table.
+2.  **01 Background:** Context, Problem, Personas.
+3.  **02 Objectives:** SMART Goals, KPIs.
+4.  **03 Features:** Core Specs, MoSCoW.
+5.  **04 UX:** Journey, UI.
+6.  **05 Milestones:** Phases, Launch Plan.
+7.  **06 Technical:** Stack, Security.
+8.  **Footer:** High Risk Element Review Table.
+
+---
+
+## ⚙️ Configuration (OpenCode)
+
+The `opencode.json` file controls the skill's behavior and permissions for OpenCode users.
 
 ```json
 {
@@ -92,24 +86,7 @@ The `opencode.json` file controls the skill's behavior and permissions.
 }
 ```
 
-*   **Model:** We recommend `claude-3-5-sonnet` for the best document generation quality.
-*   **Permissions:** Ensure `feishu-mcp_*` tools are allowed.
-
 ---
-
-## 📂 Project Structure
-
-```
-.
-├── .opencode/
-│   ├── skills/
-│   │   └── prd-generator/
-│   │       └── SKILL.md       # 🧠 The core logic & template
-│   └── commands/
-│       └── generate-prd.md    # ⚡ The slash command trigger
-├── opencode.json              # 🔧 Configuration file
-└── README.md                  # 📖 This documentation
-```
 
 ## 📄 License
 
