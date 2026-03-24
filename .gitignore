@@ -1,0 +1,18 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# OpenCode
+.opencode/plans/
+.opencode/commands/.md
+
+# Generated Files
+*.docx
+*.pdf

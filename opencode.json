@@ -1,0 +1,15 @@
+{
+  "permission": {
+    "skill": {
+      "*": "allow",
+      "prd-generator": "allow"
+    }
+  },
+  "command": {
+    "generate-prd": {
+      "template": "Generate a comprehensive PRD from the BRD at: $ARGUMENTS",
+      "description": "Create PRD from BRD URL",
+      "skill": "prd-generator"
+    }
+  }
+}
