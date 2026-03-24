@@ -1,7 +1,7 @@
 ---
 description: Generate a PRD from a BRD Feishu Doc URL.
 agent: quick
-model: anthropic/claude-3-5-sonnet-20241022
+model: Mify-Anthropic/ppio/pa/claude-sonnet-4-6
 skill: prd-generator
 ---
 
