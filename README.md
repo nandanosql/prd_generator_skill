@@ -33,7 +33,7 @@ Once installed, use the slash command in your OpenCode chat:
 
 **Example:**
 ```bash
-/generate-prd https://mi.feishu.cn/wiki/KrXcwsU7aivtOpkiTjPc6mvNnXd
+/generate-prd https://feishu.cn/wiki/wikcnP4Z8X...
 ```
 
 ## 📂 Project Structure
